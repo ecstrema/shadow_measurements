@@ -1,0 +1,20 @@
+{
+	"name": "vite-threejs-ts-starter",
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"serve": "vite preview"
+	},
+	"devDependencies": {
+		"@types/three": "^0.134.0",
+		"typescript": "^4.3.2",
+		"vite": "^2.6.14"
+	},
+	"dependencies": {
+		"@types/suncalc": "^1.8.1",
+		"lil-gui": "^0.17.0",
+		"suncalc": "^1.9.0",
+		"three": "^0.134.0"
+	}
+}
