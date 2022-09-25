@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
-		"serve": "vite preview",
+		"preview": "vite preview",
 		"deploy": "pnpm build && gh-pages -d dist"
 	},
 	"devDependencies": {
@@ -12,7 +12,8 @@
 		"@types/three": "^0.134.0",
 		"eslint": "^8.24.0",
 		"typescript": "^4.3.2",
-		"vite": "^2.6.14"
+		"vite": "^2.6.14",
+		"vite-plugin-compression": "^0.5.1"
 	},
 	"dependencies": {
 		"@types/suncalc": "^1.8.1",
