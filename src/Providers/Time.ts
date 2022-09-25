@@ -1,4 +1,3 @@
-
 export class TimeProvider {
   private static lastUpdateDelta = 0;
 
@@ -9,9 +8,9 @@ export class TimeProvider {
   // static time = new Date(2022, 1, 20, 15, 40).getTime();
 
   static update(delta: number) {
-    if (TimeProvider.timeAdvance) {
+    if (TimeProvider.timeAdvance)
       TimeProvider.time += (delta - TimeProvider.lastUpdateDelta) * TimeProvider.timeSpeedMultiplier;
-    }
+
     TimeProvider.lastUpdateDelta = delta;
   }
 

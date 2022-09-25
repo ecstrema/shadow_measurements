@@ -3,7 +3,7 @@ import { TimeProvider } from "./Providers/Time";
 export class CurrentTime {
   private el: HTMLDivElement;
   constructor() {
-    this.el = document.createElement('div');
+    this.el = document.createElement("div");
     Object.assign(this.el.style, {
       position: "absolute",
       top: "10px",

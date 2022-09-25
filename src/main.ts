@@ -1,9 +1,10 @@
-import './style.css';
+import "./style.css";
 
-import Scene from './Scene';
+import Scene from "./Scene";
 // import { main } from './Controller';
 
-window.addEventListener('DOMContentLoaded', () => {
-	new Scene;
-	// main(new Scene());
+window.addEventListener("DOMContentLoaded", () => {
+  // eslint-disable-next-line no-new
+  new Scene();
+  // main(new Scene);
 });

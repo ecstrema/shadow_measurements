@@ -8,7 +8,9 @@
 		"deploy": "pnpm build && gh-pages -d dist"
 	},
 	"devDependencies": {
+		"@marr11317/eslint-config": "^0.0.6",
 		"@types/three": "^0.134.0",
+		"eslint": "^8.24.0",
 		"typescript": "^4.3.2",
 		"vite": "^2.6.14"
 	},
@@ -17,6 +19,7 @@
 		"gh-pages": "^4.0.0",
 		"lil-gui": "^0.17.0",
 		"suncalc": "^1.9.0",
-		"three": "^0.134.0"
+		"three": "^0.134.0",
+		"vite-plugin-compress": "^2.1.1"
 	}
 }

@@ -1,20 +1,20 @@
-import * as THREE from 'three';
-import { SunPositionProvider } from './Providers/sunPosition';
+import * as THREE from "three";
+import { SunPositionProvider } from "./Providers/sunPosition";
 
 class SunLight extends THREE.PointLight {
   constructor() {
-    super(0xffffff, 1, 10000);
+    super(0xFFFFFF, 1, 10000);
     this.castShadow = true;
   }
 
-  setNightMode(nightMode: boolean,) {
+  setNightMode(nightMode: boolean) {
     this.intensity = nightMode ? 0.1 : 1;
   }
 }
 
 class SunSphere extends THREE.Mesh {
   private static nightColor = 0x888800;
-  private static dayColor = 0xffff00;
+  private static dayColor = 0xFFFF00;
 
   constructor() {
     const geometry = new THREE.SphereGeometry(10, 16, 8);
@@ -60,7 +60,6 @@ export class Sun extends THREE.Group {
     const y = rs * Math.sin(pos.azimuth);
     const z = r * Math.cos(pos.altitude);
     this.position.set(x, -z, y);
-
 
     const isNowNight = this.position.y < 0;
     if (isNowNight !== this.isNight) {

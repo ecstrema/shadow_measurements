@@ -1,4 +1,4 @@
-import { getPosition } from 'suncalc';
+import { getPosition } from "suncalc";
 import { TimeProvider } from "./Time";
 
 export class SunPositionProvider {
