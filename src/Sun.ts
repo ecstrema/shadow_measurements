@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { SunPositionProvider } from "./Providers/sunPosition";
+import { SunPositionProvider } from "./Providers/SunPosition";
 
 class SunLight extends THREE.PointLight {
   constructor() {

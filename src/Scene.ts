@@ -69,9 +69,9 @@ export default class Scene {
     const gui = new GUI();
 
     const timeFolder = gui.addFolder("Time");
-    timeFolder.add(TimeProvider, "timeAdvance");
+    timeFolder.add(TimeProvider, "play");
     timeFolder.add(TimeProvider, "timeSpeedMultiplier", 0, 100_000);
-    timeFolder.add(TimeProvider, "time", new Date(2022, 1, 1).getTime(), new Date(2022, 12, 31).getTime(), 1).listen();
+    // timeFolder.add(TimeProvider, "time", new Date(2022, 1, 1).getTime(), new Date(2022, 12, 31).getTime(), 1).listen();
     timeFolder.add(TimeProvider, "addOneMinute");
     timeFolder.add(TimeProvider, "addTenMinutes");
     timeFolder.add(TimeProvider, "addOneHour");
@@ -98,7 +98,7 @@ export default class Scene {
           break;
 
         case " ":
-          TimeProvider.timeAdvance = !TimeProvider.timeAdvance;
+          TimeProvider.play = !TimeProvider.play;
           event.preventDefault();
           event.stopPropagation();
           break;

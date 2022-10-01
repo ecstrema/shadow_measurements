@@ -2,13 +2,13 @@ export class TimeProvider {
   private static lastUpdateDelta = 0;
 
   static timeSpeedMultiplier = 5_000;
-  static timeAdvance = true;
+  static play = true;
   static time = new Date(2022, 0, 1, 1).getTime();
-  // static timeAdvance = false;
+  // static play = false;
   // static time = new Date(2022, 1, 20, 15, 40).getTime();
 
   static update(delta: number) {
-    if (TimeProvider.timeAdvance)
+    if (TimeProvider.play)
       TimeProvider.time += (delta - TimeProvider.lastUpdateDelta) * TimeProvider.timeSpeedMultiplier;
 
     TimeProvider.lastUpdateDelta = delta;
