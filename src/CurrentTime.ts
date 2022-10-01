@@ -19,6 +19,6 @@ export class CurrentTime {
   }
 
   update() {
-    this.el.innerText = new Date(TimeProvider.time).toUTCString();
+    this.el.innerText = new Date(TimeProvider.time + 7_200_000).toUTCString();
   }
 }
