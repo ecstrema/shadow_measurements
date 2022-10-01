@@ -18,23 +18,47 @@ export class TimeProvider {
     TimeProvider.time += 60_000;
   }
 
+  static removeOneMinute() {
+    TimeProvider.time -= 60_000;
+  }
+
   static addTenMinutes() {
     TimeProvider.time += 600_000;
+  }
+
+  static removeTenMinutes() {
+    TimeProvider.time -= 600_000;
   }
 
   static addOneHour() {
     TimeProvider.time += 3_600_000;
   }
 
+  static removeOneHour() {
+    TimeProvider.time -= 3_600_000;
+  }
+
   static addOneDay() {
     TimeProvider.time += 86_400_000;
+  }
+
+  static removeOneDay() {
+    TimeProvider.time -= 86_400_000;
   }
 
   static addTenDays() {
     TimeProvider.time += 864_000_000;
   }
 
+  static removeTenDays() {
+    TimeProvider.time -= 864_000_000;
+  }
+
   static addOneMonth() {
     TimeProvider.time += 2_592_000_000;
+  }
+
+  static removeOneMonth() {
+    TimeProvider.time -= 2_592_000_000;
   }
 }

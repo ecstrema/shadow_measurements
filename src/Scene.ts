@@ -77,7 +77,13 @@ export default class Scene {
     timeFolder.add(TimeProvider, "addOneHour");
     timeFolder.add(TimeProvider, "addOneDay");
     timeFolder.add(TimeProvider, "addTenDays");
-    timeFolder.add(TimeProvider, "addOneMonth");
+    timeFolder.add(TimeProvider, "removeOneMonth");
+    timeFolder.add(TimeProvider, "removeOneMinute");
+    timeFolder.add(TimeProvider, "removeTenMinutes");
+    timeFolder.add(TimeProvider, "removeOneHour");
+    timeFolder.add(TimeProvider, "removeOneDay");
+    timeFolder.add(TimeProvider, "removeTenDays");
+    timeFolder.add(TimeProvider, "removeOneMonth");
 
     const constructionFolder = gui.addFolder("Constructions");
     constructionFolder.add(Constructions, "nbdetages", 1, 10, 1).onChange(() => {
