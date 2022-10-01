@@ -73,16 +73,16 @@ export default class Scene {
     timeFolder.add(TimeProvider, "timeSpeedMultiplier", 0, 100_000);
     // timeFolder.add(TimeProvider, "time", new Date(2022, 1, 1).getTime(), new Date(2022, 12, 31).getTime(), 1).listen();
     timeFolder.add(TimeProvider, "addOneMinute");
-    timeFolder.add(TimeProvider, "addTenMinutes");
-    timeFolder.add(TimeProvider, "addOneHour");
-    timeFolder.add(TimeProvider, "addOneDay");
-    timeFolder.add(TimeProvider, "addTenDays");
-    timeFolder.add(TimeProvider, "removeOneMonth");
     timeFolder.add(TimeProvider, "removeOneMinute");
+    timeFolder.add(TimeProvider, "addTenMinutes");
     timeFolder.add(TimeProvider, "removeTenMinutes");
+    timeFolder.add(TimeProvider, "addOneHour");
     timeFolder.add(TimeProvider, "removeOneHour");
+    timeFolder.add(TimeProvider, "addOneDay");
     timeFolder.add(TimeProvider, "removeOneDay");
+    timeFolder.add(TimeProvider, "addTenDays");
     timeFolder.add(TimeProvider, "removeTenDays");
+    timeFolder.add(TimeProvider, "addOneMonth");
     timeFolder.add(TimeProvider, "removeOneMonth");
 
     const constructionFolder = gui.addFolder("Constructions");
