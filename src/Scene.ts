@@ -69,7 +69,7 @@ export default class Scene {
     const gui = new GUI();
 
     const timeFolder = gui.addFolder("Time");
-    timeFolder.add(TimeProvider, "play");
+    timeFolder.add(TimeProvider, "play").listen();
     timeFolder.add(TimeProvider, "timeSpeedMultiplier", 0, 100_000);
     // timeFolder.add(TimeProvider, "time", new Date(2022, 1, 1).getTime(), new Date(2022, 12, 31).getTime(), 1).listen();
     timeFolder.add(TimeProvider, "addOneMinute");
@@ -93,7 +93,7 @@ export default class Scene {
 
   initListeners() {
     window.addEventListener("resize", this.onWindowResize.bind(this), false);
-    window.addEventListener("keydown", (event) => {
+    window.addEventListener("keypress", (event) => {
       const { key } = event;
 
       switch (key) {
@@ -105,6 +105,57 @@ export default class Scene {
 
         case " ":
           TimeProvider.play = !TimeProvider.play;
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "ArrowDown":
+          Constructions.nbdetages -= 1;
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "ArrowUp":
+          Constructions.nbdetages += 1;
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "ArrowRight":
+          TimeProvider.addOneMinute();
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "ArrowLeft":
+          TimeProvider.removeOneMinute();
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "h":
+          if (event.shiftKey)
+            TimeProvider.removeOneHour();
+          else
+            TimeProvider.addOneHour();
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "d":
+          if (event.shiftKey)
+            TimeProvider.removeOneDay();
+          else
+            TimeProvider.addOneDay();
+          event.preventDefault();
+          event.stopPropagation();
+          break;
+
+        case "m":
+          if (event.shiftKey)
+            TimeProvider.removeOneMonth();
+          else
+            TimeProvider.addOneMonth();
           event.preventDefault();
           event.stopPropagation();
           break;
