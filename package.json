@@ -11,8 +11,8 @@
 		"@marr11317/eslint-config": "^0.0.6",
 		"@types/three": "^0.134.0",
 		"eslint": "^8.24.0",
-		"typescript": "^4.3.2",
-		"vite": "^2.6.14",
+		"typescript": "^4.8.4",
+		"vite": "^2.9.15",
 		"vite-plugin-compression": "^0.5.1"
 	},
 	"dependencies": {

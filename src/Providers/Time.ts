@@ -4,8 +4,6 @@ export class TimeProvider {
   static timeSpeedMultiplier = 5_000;
   static play = true;
   static time = new Date(2022, 0, 1, 1).getTime();
-  // static play = false;
-  // static time = new Date(2022, 1, 20, 15, 40).getTime();
 
   static update(delta: number) {
     if (TimeProvider.play)
