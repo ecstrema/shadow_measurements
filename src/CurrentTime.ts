@@ -3,6 +3,8 @@ import { TimeProvider } from "./Providers/Time";
 export class CurrentTime {
   private dateInput: HTMLInputElement;
 
+  private stoppedByFocus = false;
+
   constructor() {
     const el = document.createElement("div");
     Object.assign(el.style, {
@@ -33,9 +35,11 @@ export class CurrentTime {
     this.dateInput.addEventListener("change", this.dateChanged.bind(this));
     this.dateInput.addEventListener("focusin", () => {
       TimeProvider.play = false;
+      this.stoppedByFocus = true;
     });
     this.dateInput.addEventListener("focusout", () => {
-      TimeProvider.play = true;
+      TimeProvider.play = this.stoppedByFocus;
+      this.stoppedByFocus = false;
     });
     el.appendChild(this.dateInput);
 
@@ -44,6 +48,7 @@ export class CurrentTime {
   }
 
   private dateChanged() {
+    this.stoppedByFocus = false;
     TimeProvider.play = false;
     TimeProvider.time = this.dateInput.valueAsNumber;
   }
