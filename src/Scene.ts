@@ -76,6 +76,18 @@ export default class Scene {
     constructionFolder.add(Constructions, "nbdetages", 1, 10, 1).onChange(() => {
       this.updateConstructions();
     });
+    timeFolder.add(TimeProvider, "addOneMinute");
+    timeFolder.add(TimeProvider, "removeOneMinute");
+    timeFolder.add(TimeProvider, "addTenMinutes");
+    timeFolder.add(TimeProvider, "removeTenMinutes");
+    timeFolder.add(TimeProvider, "addOneHour");
+    timeFolder.add(TimeProvider, "removeOneHour");
+    timeFolder.add(TimeProvider, "addOneDay");
+    timeFolder.add(TimeProvider, "removeOneDay");
+    timeFolder.add(TimeProvider, "addTenDays");
+    timeFolder.add(TimeProvider, "removeTenDays");
+    timeFolder.add(TimeProvider, "addOneMonth");
+    timeFolder.add(TimeProvider, "removeOneMonth");
   }
 
   initListeners() {
