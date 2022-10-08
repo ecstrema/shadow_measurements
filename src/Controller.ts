@@ -7,14 +7,16 @@ function sleep(ms: number) {
 }
 
 export async function main(scene: Scene) {
-  while (TimeProvider.time < new Date(2023, 0, 1, 15, 40).getTime()) {
-    TimeProvider.addOneDay();
+  TimeProvider.play = false;
+  TimeProvider.time = new Date(2022, 0, 1, 15, 0).getTime();
+  while (TimeProvider.time < new Date(2023, 0, 1, 15, 0).getTime()) {
+    TimeProvider.time += 5 * 86_400_000;
 
-    for (const nbdetage of [4, 5, 6]) {
+    for (const nbdetage of [4, 6]) {
       Constructions.nbdetages = nbdetage;
       scene.updateConstructions();
       scene.takeScreenShot();
-      await sleep(100);
+      await sleep(300);
     }
   }
 }

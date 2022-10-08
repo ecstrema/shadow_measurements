@@ -34,8 +34,8 @@ export class CurrentTime {
 
     this.dateInput.addEventListener("change", this.dateChanged.bind(this));
     this.dateInput.addEventListener("focusin", () => {
+      this.stoppedByFocus = TimeProvider.play;
       TimeProvider.play = false;
-      this.stoppedByFocus = true;
     });
     this.dateInput.addEventListener("focusout", () => {
       TimeProvider.play = this.stoppedByFocus;
