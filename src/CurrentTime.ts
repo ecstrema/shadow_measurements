@@ -50,11 +50,11 @@ export class CurrentTime {
   private dateChanged() {
     this.stoppedByFocus = false;
     TimeProvider.play = false;
-    TimeProvider.time = this.dateInput.valueAsNumber;
+    TimeProvider.setLocalTime(this.dateInput.valueAsNumber);
   }
 
   private updateDateInputValue() {
-    this.dateInput.value = new Date(TimeProvider.time).toISOString().slice(0, -3);
+    this.dateInput.value = TimeProvider.localDate().toISOString().slice(0, -3);
   }
 
   update() {

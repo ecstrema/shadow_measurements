@@ -4,6 +4,7 @@ import { SunPositionProvider } from "./Providers/SunPosition";
 class SunLight extends THREE.PointLight {
   constructor() {
     super(0xFFFFFF, 1, 10000);
+    this.decay = 0;
     this.castShadow = true;
   }
 

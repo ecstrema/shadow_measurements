@@ -2,14 +2,22 @@ export class TimeProvider {
   private static lastUpdateDelta = 0;
 
   static timeSpeedMultiplier = 5_000;
-  static play = true;
-  static time = new Date(2022, 0, 1, 1).getTime();
+  static play = false;
+  static time = new Date(2022, 0, 1, 7).getTime();
 
   static update(delta: number) {
     if (TimeProvider.play)
       TimeProvider.time += (delta - TimeProvider.lastUpdateDelta) * TimeProvider.timeSpeedMultiplier;
 
     TimeProvider.lastUpdateDelta = delta;
+  }
+
+  static localDate() {
+    return new Date(TimeProvider.time + 7_200_000);
+  }
+
+  static setLocalTime(time: number) {
+    TimeProvider.time = time - 7_200_000;
   }
 
   static addOneMinute() {
