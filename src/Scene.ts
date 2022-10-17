@@ -73,7 +73,7 @@ export default class Scene {
     timeFolder.add(TimeProvider, "timeSpeedMultiplier", 0, 100_000);
 
     const constructionFolder = gui.addFolder("Constructions");
-    constructionFolder.add(Constructions, "nbdetages", 1, 10, 1).onChange(() => {
+    constructionFolder.add(Constructions, "nbdetages", 3, 6, 1).onChange(() => {
       this.updateConstructions();
     });
     timeFolder.add(TimeProvider, "addOneMinute");

@@ -12,8 +12,9 @@ export async function main(scene: Scene) {
   while (TimeProvider.time < new Date(2023, 0, 1, 15, 0).getTime()) {
     TimeProvider.time += 5 * 86_400_000;
 
-    for (const nbdetage of [4, 6]) {
-      Constructions.nbdetages = nbdetage;
+    const targets = [4, 6];
+    for (const nbdetage of targets) {
+      Constructions.nbdetages = nbdetage as 4 | 6;
       scene.updateConstructions();
       scene.takeScreenShot();
       await sleep(300);
