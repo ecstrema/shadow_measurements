@@ -13,11 +13,11 @@ export class TimeProvider {
   }
 
   static localDate() {
-    return new Date(TimeProvider.time + 7_200_000);
+    return new Date(TimeProvider.time + 3_600_000);
   }
 
   static setLocalTime(time: number) {
-    TimeProvider.time = time - 7_200_000;
+    TimeProvider.time = time - 3_600_000;
   }
 
   static addOneMinute() {
