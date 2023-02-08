@@ -51,7 +51,7 @@ export default class Scene {
     this.scene.add(ambientLight);
 
     this.sun = new Sun();
-    this.scene.add(new THREE.CameraHelper(this.sun.light.shadow.camera));
+    // this.scene.add(new THREE.CameraHelper(this.sun.light.shadow.camera));
 
     this.scene.add(this.sun);
 
