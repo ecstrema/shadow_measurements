@@ -41,6 +41,7 @@ export default class Scene {
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setClearColor(0xFFFFFF, 1);
 
     document.body.appendChild(this.renderer.domElement);
 

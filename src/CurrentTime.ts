@@ -25,10 +25,11 @@ export class CurrentTime {
       fontSize: "16px",
       textAlign: "center",
       color: "#00e6e6",
-      backgroundColor: "#333",
+      backgroundColor: "#8e8e8e",
       border: "none",
       borderRadius: "3px",
       borderBottom: "1px solid #00e6e6",
+      padding: "0 5px",
     } as Partial<CSSStyleDeclaration>);
     this.updateDateInputValue();
 
