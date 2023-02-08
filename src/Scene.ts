@@ -33,7 +33,7 @@ export default class Scene {
   initScene() {
     this.scene = new THREE.Scene();
 
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.camera.position.setFromSphericalCoords(600, Math.PI / 4, 0);
 
     this.renderer = new THREE.WebGLRenderer();
@@ -51,6 +51,8 @@ export default class Scene {
     this.scene.add(ambientLight);
 
     this.sun = new Sun();
+    this.scene.add(new THREE.CameraHelper(this.sun.light.shadow.camera));
+
     this.scene.add(this.sun);
 
     this.constructions = new Constructions();
@@ -71,7 +73,7 @@ export default class Scene {
 
     const timeFolder = gui.addFolder("Time");
     timeFolder.add(TimeProvider, "play").listen();
-    timeFolder.add(TimeProvider, "timeSpeedMultiplier", 0, 100_000);
+    timeFolder.add(TimeProvider, "timeSpeedMultiplier", 0, 10_000);
 
     const constructionFolder = gui.addFolder("Constructions");
     constructionFolder.add(Constructions, "nbdetages", 3, 6, 1).onChange(() => {

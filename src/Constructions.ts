@@ -37,13 +37,14 @@ export class Constructions extends THREE.Group {
     /** Batiment universitaire */
     const dUni = "M -300.2865,87.430307 H -287.87487 V 82.091053 L -280.3109,82.758459 L -282.31314,86.762901 L -263.12518,98.275671 L -260.78926,102.28011 L -261.12296,123.74837 L -270.74473,140.15545 L -278.3087,144.27113 L -265.62796,165.85062 L -235.87273,166.40679 L -224.02626,173.5258 L -211.01182,151.16767 L -229.58798,118.79843 V 113.79288 L -218.687,94.994253 L -209.89948,89.988701 L -214.01515,82.980928 L -210.90059,80.645004 L -216.12861,71.857478 L -222.13527,72.191183 L -222.02404,66.073286 L -257.17413,65.405878 L -261.95722,62.625017 L -272.96943,44.16009 L -272.41325,34.48269 L -281.20078,34.92763 L -280.97832,30.255781 L -293.32533,30.033312 L -293.2141,34.816393 L -300.2865,34.48269 Z";
 
+    // The actual extrude depth is from set in the update method, via the scale parameter
     this.uni = createExtrudedPolygon(dUni, 0xF08885, 1);
     this.uni.castShadow = true;
     this.update();
 
     this.add(batiment, terrain, sol, this.uni);
     this.position.set(50, 0, -200);
-    this.rotation.y = 1.01;
+    this.rotation.y = 1.01; // More than one to appear above the plane
   }
 
   update() {

@@ -1,11 +1,26 @@
 import * as THREE from "three";
 import { SunPositionProvider } from "./Providers/SunPosition";
 
-class SunLight extends THREE.PointLight {
+class SunLight extends THREE.DirectionalLight {
   constructor() {
-    super(0xFFFFFF, 1, 10000);
-    this.decay = 0;
+    super(0xFFFFFF, 1);
     this.castShadow = true;
+    this.shadow.mapSize.width = 2048;
+    this.shadow.mapSize.height = 2048;
+
+    const frustumSize = 200;
+
+    this.shadow.camera = new THREE.OrthographicCamera(
+      -frustumSize / 2,
+      frustumSize / 2,
+      frustumSize / 2,
+      -frustumSize / 2,
+      1,
+      800,
+    );
+
+    this.shadow.camera.position.copy(this.position);
+    this.shadow.camera.lookAt(new THREE.Vector3(0, 0, 0));
   }
 
   setNightMode(nightMode: boolean) {
@@ -29,7 +44,7 @@ class SunSphere extends THREE.Mesh {
 }
 
 export class Sun extends THREE.Group {
-  private light: SunLight;
+  light: SunLight;
   private sphere: SunSphere;
 
   private isNight = false;
